@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "install": "qnpm install"
+    "install": "pnpm install"
   },
   "keywords": [],
   "author": "",
