@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const app = express();
 const port = process.env.PORT || 1491;
@@ -17,6 +17,7 @@ const connection = mysql.createConnection(dbConfig);
 app.get('/', (req, res) => {
     connection.connect((err) => {
         if (err) {
+            console.error('Failed to connect to the database.' + err.stack);
             res.send('Failed to connect to the database.');
         } else {
             res.send('Connected to the database.');
